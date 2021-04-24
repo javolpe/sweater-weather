@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MapquestService, type: :model do 
   describe "happy path" do 
     describe "find lat long happy path" do 
-      it "should return Denvers lat/lang if given Denver,CO as query params" do 
+      it "should return Denvers lat/lang if given Denver,CO as query params", :vcr do 
         response = MapquestService.find_lat_long("denver,co")
 
         expect(response.class).to eq(Hash)

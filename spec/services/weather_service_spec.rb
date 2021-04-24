@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe WeatherService, type: :model do 
   describe "happy path" do 
     describe "when given a lat long" do 
-      it "returns the current, hourly and daily weather data we need" do 
+      it "returns the current, hourly and daily weather data we need", :vcr do 
         response = WeatherService.find_current_forecast(39.1224, -104.1665)
 
         expect(response).to be_a(Hash)
