@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sat, 24 Apr 2021 21:52:02 GMT
+      - Sat, 24 Apr 2021 21:52:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -96,5 +96,5 @@ http_interactions:
         rain","icon":"10d"}],"clouds":7,"pop":0.39,"rain":0.5,"uvi":8},{"dt":1619805600,"sunrise":1619783946,"sunset":1619833702,"moonrise":0,"moonset":1619794020,"moon_phase":0.64,"temp":{"day":67.71,"min":45.03,"max":73.74,"night":63.19,"eve":73.63,"morn":45.03},"feels_like":{"day":65.41,"night":39.94,"eve":71.58,"morn":39.94},"pressure":1016,"humidity":26,"dew_point":31.95,"wind_speed":13.27,"wind_deg":217,"wind_gust":15.66,"weather":[{"id":801,"main":"Clouds","description":"few
         clouds","icon":"02d"}],"clouds":23,"pop":0,"uvi":8},{"dt":1619892000,"sunrise":1619870274,"sunset":1619920161,"moonrise":1619850540,"moonset":1619884020,"moon_phase":0.68,"temp":{"day":79.2,"min":56.66,"max":82.38,"night":68.86,"eve":79.81,"morn":56.66},"feels_like":{"day":79.2,"night":53.62,"eve":79.81,"morn":53.62},"pressure":1004,"humidity":14,"dew_point":26.08,"wind_speed":22.48,"wind_deg":287,"wind_gust":29.15,"weather":[{"id":800,"main":"Clear","description":"clear
         sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":8}]}'
-  recorded_at: Sat, 24 Apr 2021 21:52:02 GMT
+  recorded_at: Sat, 24 Apr 2021 21:52:01 GMT
 recorded_with: VCR 6.0.0

@@ -3,30 +3,7 @@ require 'rails_helper'
 RSpec.describe DailyWeather do 
   describe 'daily weather poro' do 
     it 'should create a daily hourly weather poro' do 
-      data = {
-        "dt": 1619278584,
-        "sunrise": 1619266002,
-        "sunset": 1619314946,
-        "temp": 47.91,
-        "feels_like": 41.97,
-        "pressure": 1015,
-        "humidity": 64,
-        "dew_point": 36.34,
-        "uvi": 3.68,
-        "clouds": 3,
-        "visibility": 10000,
-        "wind_speed": 15.01,
-        "wind_deg": 195,
-        "wind_gust": 25.01,
-        "weather": [
-            {
-                "id": 800,
-                "main": "Clear",
-                "description": "clear sky",
-                "icon": "01d"
-            }
-        ]
-    }
+      data = test_current_poro
 
       current_data = CurrentWeather.new(data)
 

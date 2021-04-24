@@ -20,6 +20,100 @@ require 'webmock/rspec'
 # SimpleCov.start 'rails'
 # SimpleCov.add_filter ['spec', 'config', 'app/channels/application_cable', 'jobs', 'mailers']
 
+def test_daily_poro 
+  {
+    "dt": 1619287200,
+    "sunrise": 1619266002,
+    "sunset": 1619314946,
+    "moonrise": 1619305140,
+    "moonset": 1619262060,
+    "moon_phase": 0.41,
+    "temp": {
+        "day": 50.43,
+        "min": 36.63,
+        "max": 62.82,
+        "night": 53.49,
+        "eve": 61.48,
+        "morn": 38.41
+    },
+    "feels_like": {
+        "day": 47.62,
+        "night": 32.23,
+        "eve": 58.55,
+        "morn": 32.23
+    },
+    "pressure": 1013,
+    "humidity": 52,
+    "dew_point": 33.49,
+    "wind_speed": 20.42,
+    "wind_deg": 192,
+    "wind_gust": 20.56,
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02d"
+        }
+    ],
+    "clouds": 13,
+    "pop": 0,
+    "uvi": 6.89
+  }
+end
+
+def test_hourly_poro
+  {
+    "dt": 1619276400,
+    "temp": 47.43,
+    "feels_like": 41.02,
+    "pressure": 1015,
+    "humidity": 63,
+    "dew_point": 35.47,
+    "uvi": 2.1,
+    "clouds": 2,
+    "visibility": 10000,
+    "wind_speed": 16.33,
+    "wind_deg": 197,
+    "wind_gust": 21.5,
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+        }
+        ],
+        "pop": 0
+    }
+end
+
+def test_current_poro
+  {
+    "dt": 1619278584,
+    "sunrise": 1619266002,
+    "sunset": 1619314946,
+    "temp": 47.91,
+    "feels_like": 41.97,
+    "pressure": 1015,
+    "humidity": 64,
+    "dew_point": 36.34,
+    "uvi": 3.68,
+    "clouds": 3,
+    "visibility": 10000,
+    "wind_speed": 15.01,
+    "wind_deg": 195,
+    "wind_gust": 25.01,
+    "weather": [
+        {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01d"
+        }
+    ]
+}
+end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
