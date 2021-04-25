@@ -1,6 +1,6 @@
 class MapquestService 
   def self.conn 
-    connection = Faraday.new(url: "http://www.mapquestapi.com") do |req|
+    connection = Faraday.new(url: "https://www.mapquestapi.com") do |req|
       req.params['key'] = ENV['MAP_KEY']
     end
   end 
