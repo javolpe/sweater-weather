@@ -19,5 +19,26 @@ RSpec.describe MapquestService, type: :model do
         expect(response[:results].first[:locations].first[:latLng][:lng]).to be_a(Float)
       end
     end
+    describe "find directions" do 
+      it "should return back driving direction data", :vcr do
+        starting = "Denver, CO"
+        ending = "Tempe, AZ" 
+        response = MapquestService.find_driving_directions(starting, ending)
+
+        expect(response).to be_a(Hash)
+        expect(response[:route]).to be_a(Hash)
+        expect(response[:route]).to have_key(:formattedTime)
+        expect(response[:route][:formattedTime]).to be_a(String)
+        expect(response[:route]).to have_key(:boundingBox)
+        expect(response[:route][:boundingBox]).to be_a(Hash)
+        expect(response[:route][:boundingBox]).to have_key(:ul)
+        expect(response[:route][:boundingBox][:ul]).to be_a(Hash)
+        expect(response[:route][:boundingBox][:ul]).to have_key(:lng)
+        expect(response[:route][:boundingBox][:ul]).to have_key(:lat)
+        expect(response[:route][:boundingBox][:ul][:lat]).to be_a(Float)
+        expect(response[:route][:boundingBox][:ul][:lng]).to be_a(Float)
+       
+      end
+    end
   end
 end

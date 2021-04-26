@@ -11,4 +11,12 @@ class MapquestService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.find_driving_directions(start_city, end_city)
+    response = conn.get("/directions/v2/route") do |req|
+      req.params['from'] = start_city
+      req.params['to'] = end_city
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
