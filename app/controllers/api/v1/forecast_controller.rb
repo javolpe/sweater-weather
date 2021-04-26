@@ -3,7 +3,6 @@ class Api::V1::ForecastController < ApplicationController
     return invalid_params if !params[:location] || params[:location] == ""
     @map_data = MapquestService.find_lat_long(params[:location])
     @coordinates = Coordinates.new(@map_data)
-    binding
     return invalid_params if bad_coordinates(@coordinates) == "true"
     @weather = WeatherService.find_current_forecast(@coordinates.lat, @coordinates.lng)
     @forecast = CityWeather.new(@weather)

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
       get 'forecast', to: 'forecast#index'
 
+      post 'users', to: 'users#create'
+
+      get 'salaries', to: 'salaries#index'
     end
   end
 end

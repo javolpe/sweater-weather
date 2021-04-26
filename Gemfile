@@ -33,6 +33,7 @@ gem 'faraday'
 gem 'json'
 gem 'fast_jsonapi'
 gem 'figaro'
+gem 'bcrypt', '~> 3.1.7'
 
 # gem 'geokit'
 
