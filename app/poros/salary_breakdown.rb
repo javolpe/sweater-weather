@@ -10,11 +10,11 @@ class SalaryBreakdown
   end
 
   def format_min(data)
-    "$#{data.round(2)}"
+    sprintf("$%2.2f", data)
   end
 
   def format_max(data)
-    "$#{data.round(2)}"
+    sprintf("$%2.2f", data)
   end
 
 end
