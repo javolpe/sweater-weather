@@ -27,6 +27,7 @@ RSpec.describe MapquestService, type: :model do
 
         expect(response).to be_a(Hash)
         expect(response[:route]).to be_a(Hash)
+        expect(response[:route][:routeError][:errorCode]).to eq(-400)
         expect(response[:route]).to have_key(:formattedTime)
         expect(response[:route][:formattedTime]).to be_a(String)
         expect(response[:route]).to have_key(:boundingBox)
@@ -37,7 +38,20 @@ RSpec.describe MapquestService, type: :model do
         expect(response[:route][:boundingBox][:ul]).to have_key(:lat)
         expect(response[:route][:boundingBox][:ul][:lat]).to be_a(Float)
         expect(response[:route][:boundingBox][:ul][:lng]).to be_a(Float)
-       
+      end
+    end
+    describe 'sad path' do 
+      it 'returns routeError 2 if route is impossible', :vcr do 
+        starting = "Denver, CO"
+        ending = "Tokyo" 
+        response = MapquestService.find_driving_directions(starting, ending)
+
+        expect(response).to be_a(Hash)
+        expect(response[:route]).to be_a(Hash)
+        expect(response[:route]).to have_key(:routeError)
+        expect(response[:route][:routeError]).to be_a(Hash)
+        expect(response[:route][:routeError]).to have_key(:errorCode)
+        expect(response[:route][:routeError][:errorCode]).to eq(2)
       end
     end
   end
