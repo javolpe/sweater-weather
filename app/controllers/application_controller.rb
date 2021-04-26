@@ -8,8 +8,8 @@ class ApplicationController < ActionController::API
     render json: { data: {}, error: 'invalid parameters' }, status: :bad_request
   end
 
-  def missing_params
-    render json: { data: {}, error: 'missing a required field' }, status: :bad_request
+  def bad_login
+    render json: { error: 'bad credentials' }, status: 400
   end
 
   def render_unprocessable_entity_response(exception)
