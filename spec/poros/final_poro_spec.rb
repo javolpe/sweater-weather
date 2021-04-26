@@ -12,6 +12,8 @@ RSpec.describe FinalPoro do
 
       expect(data.class).to eq(FinalPoro)
       expect(data.id).to be_nil
+      expect(data.destination).to eq("miami")
+
       expect(data.forecast).to be_a(Hash)
       expect(data.forecast).to have_key(:summary)
       expect(data.forecast).to have_key(:temperature)
