@@ -5,7 +5,7 @@ class SalaryBreakdown
 
   def initialize(data)
     @title = data[:job][:title]
-    @min = fomrat_min(data[:salary_percentiles][:percentile_25])
+    @min = format_min(data[:salary_percentiles][:percentile_25])
     @max = format_max(data[:salary_percentiles][:percentile_75])
   end
 

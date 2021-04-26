@@ -24,8 +24,6 @@ class FinalPoro
         desired_jobs << job
       end
     end
-    desired_jobs
-    binding.pry
-    # jobs = salary_info.find_all(|job| job[:title
+    desired_jobs.map{|job| SalaryBreakdown.new(job)}
   end
 end
