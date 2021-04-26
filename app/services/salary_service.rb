@@ -21,9 +21,9 @@ class SalaryService
 
   def self.find_urban_area_salaries(search)
     endpoint = find_city_with_id(search)
-    response = Faraday.get("#{endpoint}/salaries/")
+    response = Faraday.get("#{endpoint}salaries/")
     data = parse(response)
-    binding.pry
+    data[:salaries]
   end
 
   def self.parse(response) 
