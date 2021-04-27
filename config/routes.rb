@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
       post 'sessions', to: 'sessions#create'
 
+      post 'road_trip', to: 'road_trip#create'
+
       get 'salaries', to: 'salaries#index'
     end
   end
