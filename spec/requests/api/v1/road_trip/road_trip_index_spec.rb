@@ -17,7 +17,7 @@ RSpec.describe 'API::V1::RoadTrip#Create', type: :request do
       
       json = JSON.parse(response.body, symbolize_names: true)
       expect(response.status).to eq(200)
-
+# binding.pry
     end
     it 'trip MORE than 47 hours but less than 167 returns origin, destination, travel time, arrival forecast with good params', :vcr do 
       headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
