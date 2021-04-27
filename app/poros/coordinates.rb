@@ -8,7 +8,9 @@ class Coordinates
   end
 
   def find_lat(data)
-    if data[:results].first[:locations].empty?
+    if data.lat
+      data.lat
+    elsif data[:results].first[:locations].empty?
       0
     else  
       data[:results].first[:locations].first[:latLng][:lat]
@@ -16,7 +18,9 @@ class Coordinates
   end
 
   def find_long(data)
-    if data[:results].first[:locations].empty?
+    if data.lng 
+      data.lng
+    elsif data[:results].first[:locations].empty?
       0
     else  
       data[:results].first[:locations].first[:latLng][:lng]
