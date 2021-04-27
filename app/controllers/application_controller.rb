@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, with: :render_unprocessable_entity_response
 
   def invalid_params
-    render json: { data: {}, error: 'invalid parameters' }, status: :bad_request
+    render json: { error: 'invalid parameters' }, status: :bad_request
   end
 
   def bad_login
@@ -14,5 +14,9 @@ class ApplicationController < ActionController::API
 
   def render_unprocessable_entity_response(exception)
     render json: { error: exception.message }, status: 400
+  end
+
+  def unauthorized
+    render json: { error: 'unauthorized request' }, status: 401
   end
 end
