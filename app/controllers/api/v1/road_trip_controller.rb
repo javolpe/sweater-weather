@@ -2,14 +2,18 @@ class Api::V1::RoadTripController < ApplicationController
   def create 
     return unauthorized if !params[:api_key] || User.where(api_key: params[:api_key]).empty?
     return invalid_params if !params[:destination] || !params[:origin]
-    @directions = MapquestService.find_driving_directions(params[:origin], params[:destination])
-    @destination_data = DestinationData.new(@directions)
-    @coordinates = Coordinates.new(@destination_data)
-    # return invalid_params if bad_coordinates(@coordinates) == "true"
-    @weather = WeatherService.find_current_forecast(@coordinates.lat, @coordinates.lng)
-    @road_trip_data = RoadTripData.new(params[:origin], params[:destination], @weather, @destination_data)
-    @serial = RoadtripSerializer.new(@road_trip_data)
-    
+    directions = MapquestService.find_driving_directions(params[:origin], params[:destination])
+    if directions[:route][:routeError][:errorCode] == -400
+      destination_data = DestinationData.new(directions)
+      # @coordinates = Coordinates.new(@destination_data)
+      # return invalid_params if bad_coordinates(@coordinates) == "true"
+      weather = WeatherService.find_current_forecast(destination_data.lat, destination_data.lng)
+      road_trip_data = RoadTripData.new(params[:origin], params[:destination], weather, destination_data)
+      @serial = RoadtripSerializer.new(@road_trip_data)
+    else 
+      impossible_road_trip = ImpossibleRoadTrip.new(params[:origin], params[:destination])
+      @serial = RoadtripSerializer.new(impossible_road_trip)
+    end
     render json: @serial
   end
 

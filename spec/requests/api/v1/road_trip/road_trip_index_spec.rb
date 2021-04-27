@@ -9,7 +9,7 @@ RSpec.describe 'API::V1::RoadTrip#Create', type: :request do
     })
    end
   describe 'happy path' do 
-    it 'trip less than 47 hours returns origin, destination, travel time, arrival forecast with good params', :vcr do 
+    it 'trip LESS than 47 hours returns origin, destination, travel time, arrival forecast with good params', :vcr do 
       headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
       body = {origin: "Buffalo, NY", destination: "Asheville, NC", api_key: @user_1.api_key}
 
@@ -19,7 +19,7 @@ RSpec.describe 'API::V1::RoadTrip#Create', type: :request do
       expect(response.status).to eq(200)
 
     end
-    it 'trip more than 47 hours but less than 167 returns origin, destination, travel time, arrival forecast with good params', :vcr do 
+    it 'trip MORE than 47 hours but less than 167 returns origin, destination, travel time, arrival forecast with good params', :vcr do 
       headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
       body = {origin: "Anchorage, AK", destination: "Miami, FL", api_key: @user_1.api_key}
 
@@ -36,11 +36,19 @@ RSpec.describe 'API::V1::RoadTrip#Create', type: :request do
       
       json = JSON.parse(response.body, symbolize_names: true)
       expect(response.status).to eq(200)
-      binding.pry
+      
     end
   end
   describe 'sad path' do 
     it 'returns unauthorized if no api_key is passed in'
-    it 'returns travel time is impossible if not possible to drive'
+    it 'returns travel time is impossible if not possible to drive', :vcr do 
+      headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
+      body = {origin: "London, England", destination: "Miami, FL", api_key: @user_1.api_key}
+
+      post api_v1_road_trip_path, headers: headers, params: body.to_json
+      
+      json = JSON.parse(response.body, symbolize_names: true)
+      expect(response.status).to eq(200)
+    end
   end
 end
