@@ -15,7 +15,7 @@
     <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#rest-endpoints">ReST Endpoints</a></li>
+    <li><a href="#endpoints">Endpoints</a></li>
 
   </ol>
 </details>
@@ -32,8 +32,12 @@ The backend theefore only has one table that houses user credentials. It does ve
 * [Unsplah Image API](https://unsplash.com/developers)
 * [Mapquest Directions API](https://developer.mapquest.com/documentation/directions-api/)
 
+
 ### Getting Started
-This project was built to mimick what a backend would send to a frontend server and does not have a functioning server to hit but endpoints can be reached via Postman. To hit these endpoints clone down the repo and run your Rails server locally. This is not hosted live hence the localhost domain.  I'm well aware of the joke about the dev student asking you to check out their "cool new site" and sending you localhost, this not that but I do appreciate the humor ha.  
+This project was built to mimick what a backend would send to a frontend server and does not have a functioning server to hit but endpoints can be reached via Postman. To hit these endpoints clone down the repo and run your Rails server locally. This is not hosted live hence the localhost domain.  I'm well aware of the joke about the dev student asking you to check out their "cool new site" and sending you localhost, this not that but I do appreciate the humor.  
+
+
+### Endpoints
 
 The endpoints to hit are as follows:
 
