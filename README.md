@@ -1,8 +1,8 @@
 # README
 
-## Sweater Weather by Jake Volpe, Turing 
+## Sweater Weather by Jake Volpe, Turing School of Software & Design Student
 
-##<!-- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
