@@ -140,38 +140,5 @@ RSpec.describe 'API::V1::RoadTrip#Create', type: :request do
       expect(response.status).to eq(400)
       expect(json[:error]).to eq("invalid parameters")
     end
-    xit 'returns invalid if word salad is given', :vcr do 
-      headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
-      body = {origin: "eageagaegeageage", destination: "Tempe, AZ",  api_key: @user_1.api_key}
-
-      post api_v1_road_trip_path, headers: headers, params: body.to_json
-      
-      json = JSON.parse(response.body, symbolize_names: true)
-  
-      expect(response.status).to eq(400)
-      expect(json[:error]).to eq("invalid parameters")
-    end
-    xit 'returns invalid if different word salad is given', :vcr do 
-      headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
-      body = {origin: "ioppheangehe", destination: "Tempe, AZ",  api_key: @user_1.api_key}
-
-      post api_v1_road_trip_path, headers: headers, params: body.to_json
-      
-      json = JSON.parse(response.body, symbolize_names: true)
-      
-      expect(response.status).to eq(400)
-      expect(json[:error]).to eq("invalid parameters")
-    end
-    xit 'returns invalid if different word salad is given for destinatino', :vcr do 
-      headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
-      body = {origin: "Tempe, AZ", destination: "naheapgaeh",  api_key: @user_1.api_key}
-
-      post api_v1_road_trip_path, headers: headers, params: body.to_json
-      
-      json = JSON.parse(response.body, symbolize_names: true)
-      
-      expect(response.status).to eq(400)
-      expect(json[:error]).to eq("invalid parameters")
-    end
   end
 end

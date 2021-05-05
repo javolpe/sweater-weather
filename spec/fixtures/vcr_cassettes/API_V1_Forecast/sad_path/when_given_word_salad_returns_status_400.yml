@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 25 Apr 2021 00:01:29 GMT
+      - Wed, 05 May 2021 16:15:23 GMT
       Content-Type:
       - application/json;charset=UTF-8
-      Transfer-Encoding:
-      - chunked
+      Content-Length:
+      - '338'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Sun, 25 Apr 2021 00:01:29 GMT
+      - Wed, 05 May 2021 16:15:23 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=2F727327D75616A1DE601C44373E89C2; Path=/; HttpOnly; Secure
+      - JSESSIONID=DBCA4F6404FB029552B1ADAD920F9716; Path=/; HttpOnly; Secure
       Status:
       - success
       Transactionweight:
@@ -55,5 +55,5 @@ http_interactions:
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"qzpkjwrtngheagegaegea"},"locations":[]}]}'
-  recorded_at: Sun, 25 Apr 2021 00:01:29 GMT
+  recorded_at: Wed, 05 May 2021 16:15:23 GMT
 recorded_with: VCR 6.0.0
