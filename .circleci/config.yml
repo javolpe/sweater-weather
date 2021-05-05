@@ -9,7 +9,7 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-      - run: ruby 2.5.3
-          name: bundler version 2.1.4
+      - run: 
+          name: sweater-weather
           command: bundle -v
       - ruby/bundle-install
