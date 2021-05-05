@@ -9,7 +9,7 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-      - run:
-          name: Bundler version 2.1.4
+      - run: ruby 2.5.3
+          name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
