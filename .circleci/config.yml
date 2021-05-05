@@ -10,6 +10,6 @@ jobs:
     steps:
       - checkout
       - run: ruby 2.5.3
-          name: Which bundler?
+          name: bundler version 2.1.4
           command: bundle -v
       - ruby/bundle-install
