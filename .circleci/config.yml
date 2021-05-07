@@ -13,6 +13,6 @@ jobs:
           name: sweater-weather
           command: bundle -v
       - ruby/bundle-install
-      - store_test_results:
-        path: spec/*
+      
+      
 
