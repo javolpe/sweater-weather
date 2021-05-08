@@ -7,23 +7,23 @@ jobs:
     working_directory: ~/sweater-weather
     docker:
       - image: circleci/ruby:2.5.3
-      environment:
+        environment:
           PGHOST: localhost
           PGUSER: sweater-weather
           RAILS_ENV: test
       - image: postgres:13.2
-      environment:
-          POSTGRES_USER: sweater_weather
-          POSTGRES_DB: sweater_weather_test
-          POSTGRES_PASSWORD: "POSTGRES_HOST_AUTH_METHOD=trust"
+        environment:
+          POSTGRES_USER: sweater-weather
+          POSTGRES_DB: sweater-weather_test
+          POSTGRES_PASSWORD: 
     steps:
       - checkout
       - run: 
           name: sweater-weather
           command: bundle -v
       - ruby/bundle-install
-      
-       - checkout
+
+      - checkout
       - run: bundle install --path vendor/bundle
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run: bundle exec rake db:setup
